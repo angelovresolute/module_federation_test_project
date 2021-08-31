@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'users', pathMatch: 'full' },
+  { path: 'users', component: UsersComponent },
+  { path: 'users/:username', component: UserDetailsComponent }
+];
 
 @NgModule({
   declarations: [
@@ -14,7 +20,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forChild(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

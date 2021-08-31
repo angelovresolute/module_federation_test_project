@@ -11,6 +11,6 @@
   <td *ngFor="let user of users">
     <div>{{user.userName}}</div>
     <div>{{user.name}}</div>
-    <div [routerLink]="['/users', user.userName]" >Edit</div>
+    <div [routerLink]="[user.username]" >Edit</div>
   </td>
 </table>

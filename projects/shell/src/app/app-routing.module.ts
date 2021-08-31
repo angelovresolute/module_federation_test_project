@@ -20,9 +20,9 @@ const routes: Routes = [
   //     .then(m => m.FlightsModule)
   // },
   {
-    path: 'flights',
-    loadChildren: () => import('mfe1/Component').then(m => m.AppComponent)
-},
+    path: 'admin-center',
+    loadChildren: () => import('mfe1/Module').then(m => m.AppModule)
+  },
 ];
 
 @NgModule({
