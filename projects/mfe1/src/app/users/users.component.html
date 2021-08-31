@@ -1,0 +1,16 @@
+<div>
+  <input type="text" placeholder="Username" (input)="searchUsers($event)">
+</div>
+
+<table>
+  <th>
+    <div>Username</div>
+    <div>Name</div>
+    <div></div>
+  </th>
+  <td *ngFor="let user of users">
+    <div>{{user.userName}}</div>
+    <div>{{user.name}}</div>
+    <div [routerLink]="['/users', user.userName]" >Edit</div>
+  </td>
+</table>
