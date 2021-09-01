@@ -3,14 +3,19 @@
 </div>
 
 <table>
-  <th>
-    <div>Username</div>
-    <div>Name</div>
-    <div></div>
-  </th>
-  <td *ngFor="let user of users">
-    <div>{{user.userName}}</div>
-    <div>{{user.name}}</div>
-    <div [routerLink]="[user.username]" >Edit</div>
-  </td>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of userResults">
+      <td>{{user.username}}</td>
+      <td>{{user.name}}</td>
+      <td [routerLink]="[user.username]">Edit</td>
+    </tr>
+  </tbody>
 </table>

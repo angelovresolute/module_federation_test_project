@@ -13,9 +13,9 @@ export class UsersComponent {
     { username: 'Aleksandar', name: 'Aleksandar Aleksandrov' },
     { username: 'Gabi', name: 'Gabi Tsenkova' },
   ];
-  userResults = [];
+  userResults = this.users;
 
   searchUsers(e): void {
-    this.userResults = this.users.filter(x => x.username.toLowerCase().includes(e.target?.toLowerCase() || ''));
+    this.userResults = this.users.filter(x => x.username.toLowerCase().includes(e.target?.value?.toLowerCase() || ''));
   }
 }

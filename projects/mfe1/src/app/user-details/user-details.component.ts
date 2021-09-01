@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SharedLibService } from 'shared-lib';
 
 @Component({
   selector: 'app-user-details',
@@ -9,10 +10,13 @@ import { ActivatedRoute } from '@angular/router';
 export class UserDetailsComponent implements OnInit {
   username: string;
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private shared: SharedLibService,
   ) { }
 
   ngOnInit(): void {
     this.username = this.route.snapshot.paramMap.get('username');
+    this.shared.someData = this.username;
+    console.log(this.shared.someData);
   }
 }
