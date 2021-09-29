@@ -10,19 +10,19 @@ const routes: Routes = [
     component: HomeComponentComponent,
     pathMatch: 'full'
   },
-  // {
-  //   path: 'flights',
-  //   loadChildren: () => loadRemoteModule({
-  //       remoteEntry: URL,
-  //       remoteName: 'mfe1',
-  //       exposedModule: './Module'
-  //     })
-  //     .then(m => m.FlightsModule)
-  // },
   {
     path: 'admin-center',
-    loadChildren: () => import('mfe1/Module').then(m => m.AppModule)
+    loadChildren: () => loadRemoteModule({
+        remoteEntry: URL,
+        remoteName: 'mfe1',
+        exposedModule: './Module'
+      })
+      .then(m => m.AppModule)
   },
+  // {
+  //   path: 'admin-center',
+  //   loadChildren: () => import('mfe1/Module').then(m => m.AppModule)
+  // },
 ];
 
 @NgModule({
